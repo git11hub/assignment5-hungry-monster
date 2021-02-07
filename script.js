@@ -5,7 +5,6 @@ const clickOnSearch = inputId => {
         .then(res => res.json())
         .then(data => displayFoods(data.meals))
 
-
     const displayFoods = foods => {
         const displayFoodItemsDiv = document.getElementById("display-food-items");
 
@@ -25,8 +24,9 @@ const clickOnSearch = inputId => {
     };
 };
 
+// Ingredients show section 
 const displayFoodDetails = (foodName, foodImage, ingredients1, ingredients2, ingredients3, ingredients4, ingredients5, ingredients6, ingredients7, ingredients8, ingredients9, ingredients10, ingredients11, ingredients12, ingredients13, ingredients14, ingredients15, ingredients16, ingredients17, ingredients18, ingredients19, ingredients20) => {
-    const displayFoodName = document.getElementById("display-details");
+    const displayFoodName = document.getElementById("display-details-ingredients");
 
     const ingredientsSection = `
     <img id="width-resize-id" src="${foodImage}">
@@ -55,6 +55,5 @@ const displayFoodDetails = (foodName, foodImage, ingredients1, ingredients2, ing
     
     `;
     displayFoodName.innerHTML = ingredientsSection;
-
 };
 
