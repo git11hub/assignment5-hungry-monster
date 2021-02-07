@@ -16,3 +16,6 @@ body{
 .width-resize{
     width: 100%;
 }
+#width-resize-id{
+    width: 25%;
+}
