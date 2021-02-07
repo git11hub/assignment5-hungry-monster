@@ -1,8 +1,5 @@
-// const searchInput = document.getElementById("search-input");
-
 const clickOnSearch = id => {
-    const searchInput = document.getElementById(id);
-    // console.log(searchInput.value);
+    const searchInput = document.getElementById(id);    
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput.value}`)
         .then(res => res.json())
@@ -10,12 +7,10 @@ const clickOnSearch = id => {
 
         const displayFoods = foods =>{
             const displayFoodItemsDiv = document.getElementById("display-food-items");
-            // console.log(displayFoodItemsDiv);          
-            for (let i = 0; i < foods.length; i++) {
-                const food = foods[i];
+                      
+            foods.forEach(food => {
                 const foodItemDiv = document.createElement('div');
-                foodItemDiv.className = 'food-item';
-               
+                foodItemDiv.className = 'food-item';               
 
                 const foodInfo = `
                 <img class="width-resize" src="${food.strMealThumb}">
@@ -23,10 +18,8 @@ const clickOnSearch = id => {
                 `;
                 foodItemDiv.innerHTML = foodInfo;
                 displayFoodItemsDiv.appendChild(foodItemDiv);
-                          
-            }
-        }
-    
+            });            
+        }    
 };
 
 
