@@ -19,7 +19,7 @@ const clickOnSearch = inputId => {
                 <h3>${food.strMeal}</h3>
                 </div>
                 `;
-            foodItemDiv.innerHTML = foodInfo;            
+            foodItemDiv.innerHTML = foodInfo;
             displayFoodItemsDiv.appendChild(foodItemDiv);
         });
     };
