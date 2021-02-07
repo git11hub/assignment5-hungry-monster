@@ -1,39 +1,36 @@
-// const inputId = document.getElementById('search-input');
 const clickOnSearch = inputId => {
-    const searchInput = document.getElementById(inputId);    
+    const searchInput = document.getElementById(inputId);
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput.value}`)
         .then(res => res.json())
         .then(data => displayFoods(data.meals))
 
-        const displayFoods = foods =>{
-            const displayFoodItemsDiv = document.getElementById("display-food-items");
-                      
-            foods.forEach(food => {
-                const foodItemDiv = document.createElement('div');
-                foodItemDiv.className = 'food-item';                             
-                // foodItemDiv.onclick = displayFoodDetails('testing Div');                             
 
-                const foodInfo = `
+    const displayFoods = foods => {
+        const displayFoodItemsDiv = document.getElementById("display-food-items");
+
+        foods.forEach(food => {
+            const foodItemDiv = document.createElement('div');
+            foodItemDiv.className = 'food-item';
+
+            const foodInfo = `
                 <div onclick = "displayFoodDetails('${food.strMeal}','${food.strMealThumb}','${food.strIngredient1}','${food.strIngredient2}','${food.strIngredient3}','${food.strIngredient4}','${food.strIngredient5}','${food.strIngredient6}','${food.strIngredient7}','${food.strIngredient8}','${food.strIngredient9}','${food.strIngredient10}','${food.strIngredient11}','${food.strIngredient12}','${food.strIngredient13}','${food.strIngredient14}','${food.strIngredient15}','${food.strIngredient16}','${food.strIngredient17}','${food.strIngredient18}','${food.strIngredient19}','${food.strIngredient20}')">
                 <img class="width-resize" src="${food.strMealThumb}">
                 <h3>${food.strMeal}</h3>
                 </div>
                 `;
-                foodItemDiv.innerHTML = foodInfo;
-                displayFoodItemsDiv.appendChild(foodItemDiv);              
-            });            
-        };   
+            foodItemDiv.innerHTML = foodInfo;            
+            displayFoodItemsDiv.appendChild(foodItemDiv);
+        });
+    };
 };
 
-const displayFoodDetails = (name,foodImage,ingredients1,ingredients2,ingredients3,ingredients4,ingredients5,ingredients6,ingredients7,ingredients8,ingredients9,ingredients10,ingredients11,ingredients12,ingredients13,ingredients14,ingredients15,ingredients16,ingredients17,ingredients18,ingredients19,ingredients20) => {
-    console.log(name);
-    // const foodName = name.innerHTML; ...........remain comment ................
-    const displayFoodName = document.getElementById("display-details");     
+const displayFoodDetails = (foodName, foodImage, ingredients1, ingredients2, ingredients3, ingredients4, ingredients5, ingredients6, ingredients7, ingredients8, ingredients9, ingredients10, ingredients11, ingredients12, ingredients13, ingredients14, ingredients15, ingredients16, ingredients17, ingredients18, ingredients19, ingredients20) => {
+    const displayFoodName = document.getElementById("display-details");
 
     const ingredientsSection = `
     <img id="width-resize-id" src="${foodImage}">
-    <h1>${name}</h1>
+    <h1>${foodName}</h1>
     <h3>Ingredients:</h3>
     <p>${ingredients1}</p>
     <p>${ingredients2}</p>
@@ -57,9 +54,7 @@ const displayFoodDetails = (name,foodImage,ingredients1,ingredients2,ingredients
     <p>${ingredients20}</p>
     
     `;
-    displayFoodName.innerHTML = ingredientsSection;    
+    displayFoodName.innerHTML = ingredientsSection;
 
-    console.log(ingredientsSection);
 };
-
 
