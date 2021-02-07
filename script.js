@@ -15,7 +15,7 @@ const clickOnSearch = inputId => {
                 // foodItemDiv.onclick = displayFoodDetails('testing Div');                             
 
                 const foodInfo = `
-                <div onclick = "displayFoodDetails('${food.strMeal}','${food.strMealThumb}')">
+                <div onclick = "displayFoodDetails('${food.strMeal}','${food.strMealThumb}','${food.strIngredient1}','${food.strIngredient2}','${food.strIngredient3}','${food.strIngredient4}','${food.strIngredient5}','${food.strIngredient6}','${food.strIngredient7}','${food.strIngredient8}','${food.strIngredient9}','${food.strIngredient10}','${food.strIngredient11}','${food.strIngredient12}','${food.strIngredient13}','${food.strIngredient14}','${food.strIngredient15}','${food.strIngredient16}','${food.strIngredient17}','${food.strIngredient18}','${food.strIngredient19}','${food.strIngredient20}')">
                 <img class="width-resize" src="${food.strMealThumb}">
                 <h3>${food.strMeal}</h3>
                 </div>
@@ -26,7 +26,7 @@ const clickOnSearch = inputId => {
         };   
 };
 
-const displayFoodDetails = (name,foodImage) => {
+const displayFoodDetails = (name,foodImage,ingredients1,ingredients2,ingredients3,ingredients4,ingredients5,ingredients6,ingredients7,ingredients8,ingredients9,ingredients10,ingredients11,ingredients12,ingredients13,ingredients14,ingredients15,ingredients16,ingredients17,ingredients18,ingredients19,ingredients20) => {
     console.log(name);
     // const foodName = name.innerHTML; ...........remain comment ................
     const displayFoodName = document.getElementById("display-details");     
@@ -34,7 +34,28 @@ const displayFoodDetails = (name,foodImage) => {
     const ingredientsSection = `
     <img id="width-resize-id" src="${foodImage}">
     <h1>${name}</h1>
-    <p>${name}</p>
+    <h3>Ingredients:</h3>
+    <p>${ingredients1}</p>
+    <p>${ingredients2}</p>
+    <p>${ingredients3}</p>
+    <p>${ingredients4}</p>
+    <p>${ingredients5}</p>
+    <p>${ingredients6}</p>
+    <p>${ingredients7}</p>
+    <p>${ingredients8}</p>
+    <p>${ingredients9}</p>
+    <p>${ingredients10}</p>
+    <p>${ingredients11}</p>
+    <p>${ingredients12}</p>
+    <p>${ingredients13}</p>
+    <p>${ingredients14}</p>
+    <p>${ingredients15}</p>
+    <p>${ingredients16}</p>
+    <p>${ingredients17}</p>
+    <p>${ingredients18}</p>
+    <p>${ingredients19}</p>
+    <p>${ingredients20}</p>
+    
     `;
     displayFoodName.innerHTML = ingredientsSection;    
 
