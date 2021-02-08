@@ -4,9 +4,11 @@ const clickOnSearch = inputId => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput.value}`)
         .then(res => res.json())
         .then(data => displayFoods(data.meals))
+        .catch(error => alert('No result found'))
 
     const displayFoods = foods => {
         const displayFoodItemsDiv = document.getElementById("display-food-items");
+        displayFoodItemsDiv.innerHTML = '';
 
         foods.forEach(food => {
             const foodItemDiv = document.createElement('div');
